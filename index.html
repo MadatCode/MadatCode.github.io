@@ -1,12 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="google-signin-client_id" content="151053058374-ha3jb984h6uem53716ro38lf4jsipl96.apps.googleusercontent.com">
         <title>Mad at Code</title>
         <link rel="icon" href="favicon.png">
         <link rel="stylesheet" href="style.css">
         <script src="https://accounts.google.com/gsi/client" async defer></script>
-        <script src="https://apis.google.com/js/platform.js" async defer></script>
     </head>
     <body>
         <div id="header">
@@ -31,12 +29,5 @@
             data-size="large"
             data-logo_alignment="left">
         </div>
-        <div class="g-signin2" data-onsuccess="onSignIn"></div>
-
-        <script>
-            function onSignIn(googleUser) {
-              console.log(googleUser.getBasicProfile())
-            }
-          </script>
     </body>
 </html>
