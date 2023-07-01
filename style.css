@@ -7,6 +7,9 @@
 #logo {
     height: 50px;
 }
+#profile {
+    right: 0;
+}
 * {
     font-family: 'Comic Sans MS', cursive;
 }
