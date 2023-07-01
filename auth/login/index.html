@@ -44,17 +44,19 @@
             console.log('Family Name: ' + responsePayload.family_name);
             console.log("Image URL: " + responsePayload.picture);
             console.log("Email: " + responsePayload.email);
+
+            $("#profile").attr("src", responsePayload.picture)
         }
         const defresponsePayload = jwt_decode("eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk5YmNiMDY5MzQwYTNmMTQ3NDYyNzk0ZGZlZmE3NWU3OTk2MTM2MzQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2ODgxMjg3OTgsImF1ZCI6IjE1MTA1MzA1ODM3NC1oYTNqYjk4NGg2dWVtNTM3MTZybzM4bGY0anNpcGw5Ni5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMjg4NDk4Mjg5ODAxNDcxNjIyMiIsImVtYWlsIjoic2Fydmluci4xMUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXpwIjoiMTUxMDUzMDU4Mzc0LWhhM2piOTg0aDZ1ZW01MzcxNnJvMzhsZjRqc2lwbDk2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwibmFtZSI6IlNhcnZpbiBSIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FBY0hUdGRZbWp3bU11T0FFUk1GbGFBc0VTaXNyQWZpRWo3VjljQUY4VHZ2Q3JnYkdBPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IlNhcnZpbiIsImZhbWlseV9uYW1lIjoiUiIsImlhdCI6MTY4ODEyOTA5OCwiZXhwIjoxNjg4MTMyNjk4LCJqdGkiOiJhZTk1OTJjYTQwOGI4NzM0ZDg5ZWM5YTRiM2NhNDZjZDA3NzcxNTk2In0.jhEOyZCCkdNMcQvS7YZ9c-ef2J7m71S2oebUrmgm2nM1tn4ncPB7skb6pQ-KlwQLF45JSZvqEkrKJWeuwnTBV7SC_2w_7g5ADGDJ1cGmS6RIOZG3ObW33VtRjf8y7sJ0lN_nTlQd6Uk-xXWV2fbVsOXYnkIOGNUemgQSTcYKulwVaSpFdLHaqEs0JDbBtV65PPy24Tzq1SqR85odlhDmaW2_vKD4x93ZEw8KaXOHBgKTYWwp7wUhs9MUcCPaeO--K1Zmz7Wo6Eb0UD1rk47__xBg3YL0J1if0suWNPSls0qOTL4ifPde0dD49X62s3SsaflNYXNHJp6rL4_8Pu9F2Q");
         
-        console.log("ID: " + responsePayload.sub);
-        console.log('Full Name: ' + responsePayload.name);
-        console.log('Given Name: ' + responsePayload.given_name);
-        console.log('Family Name: ' + responsePayload.family_name);
-        console.log("Image URL: " + responsePayload.picture);
-        console.log("Email: " + responsePayload.email);
+        console.log("ID: " + defresponsePayload.sub);
+        console.log('Full Name: ' + defresponsePayload.name);
+        console.log('Given Name: ' + defresponsePayload.given_name);
+        console.log('Family Name: ' + defresponsePayload.family_name);
+        console.log("Image URL: " + defresponsePayload.picture);
+        console.log("Email: " + defresponsePayload.email);
 
-        $("#profile").attr("src", responsePayload.picture)
+        $("#profile").attr("src", defresponsePayload.picture)
         // console.log(jwt_decode("eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk5YmNiMDY5MzQwYTNmMTQ3NDYyNzk0ZGZlZmE3NWU3OTk2MTM2MzQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2ODgxMjg3OTgsImF1ZCI6IjE1MTA1MzA1ODM3NC1oYTNqYjk4NGg2dWVtNTM3MTZybzM4bGY0anNpcGw5Ni5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMjg4NDk4Mjg5ODAxNDcxNjIyMiIsImVtYWlsIjoic2Fydmluci4xMUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXpwIjoiMTUxMDUzMDU4Mzc0LWhhM2piOTg0aDZ1ZW01MzcxNnJvMzhsZjRqc2lwbDk2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwibmFtZSI6IlNhcnZpbiBSIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FBY0hUdGRZbWp3bU11T0FFUk1GbGFBc0VTaXNyQWZpRWo3VjljQUY4VHZ2Q3JnYkdBPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IlNhcnZpbiIsImZhbWlseV9uYW1lIjoiUiIsImlhdCI6MTY4ODEyOTA5OCwiZXhwIjoxNjg4MTMyNjk4LCJqdGkiOiJhZTk1OTJjYTQwOGI4NzM0ZDg5ZWM5YTRiM2NhNDZjZDA3NzcxNTk2In0.jhEOyZCCkdNMcQvS7YZ9c-ef2J7m71S2oebUrmgm2nM1tn4ncPB7skb6pQ-KlwQLF45JSZvqEkrKJWeuwnTBV7SC_2w_7g5ADGDJ1cGmS6RIOZG3ObW33VtRjf8y7sJ0lN_nTlQd6Uk-xXWV2fbVsOXYnkIOGNUemgQSTcYKulwVaSpFdLHaqEs0JDbBtV65PPy24Tzq1SqR85odlhDmaW2_vKD4x93ZEw8KaXOHBgKTYWwp7wUhs9MUcCPaeO--K1Zmz7Wo6Eb0UD1rk47__xBg3YL0J1if0suWNPSls0qOTL4ifPde0dD49X62s3SsaflNYXNHJp6rL4_8Pu9F2Q"))
     </script>
 </body>
