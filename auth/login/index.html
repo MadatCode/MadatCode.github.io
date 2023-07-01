@@ -2,46 +2,48 @@
 <html lang="en">
 <head>
     <link rel="icon" href="/favicon.png">
-    <script src="https://accounts.google.com/gsi/client" async defer></script>
     <script src="https://unpkg.com/jwt-decode/build/jwt-decode.js" async defer></script>
     <link rel="stylesheet" href="/style.css">
+    <script src="https://accounts.google.com/gsi/client" async defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
     <title>Login or Sign Up</title>
 </head>
 <body>
     <div id="header">
         <img src="/headerLogo.png" id="logo">
     </div>
+    <h1>Login or Signup</h1>
     <div id="g_id_onload"
-            data-client_id="151053058374-ha3jb984h6uem53716ro38lf4jsipl96.apps.googleusercontent.com"
-            data-callback="handleCredentialResponse"
-            data-context="signin"
-            data-ux_mode="popup"
-            data-login_uri="/auth/success"
-            data-auto_prompt="false">
-        </div>
+        data-client_id="151053058374-ha3jb984h6uem53716ro38lf4jsipl96.apps.googleusercontent.com"
+        data-callback="handleCredentialResponse"
+        data-context="signin"
+        data-ux_mode="popup"
+        data-login_uri="/auth/success"
+        data-auto_prompt="false">
+    </div>
 
-        <div class="g_id_signin"
-            data-type="standard"
-            data-shape="rectangular"
-            data-theme="outline"
-            data-text="signin_with"
-            data-size="large"
-            data-logo_alignment="left">
-        </div>
+    <div class="g_id_signin"
+        data-type="standard"
+        data-shape="rectangular"
+        data-theme="outline"
+        data-text="signin_with"
+        data-size="large"
+        data-logo_alignment="left">
+    </div>
 
-        <script async defer>
-            function handleCredentialResponse(response) {
-                console.log("JWT Data : " + response.credential)
-               const responsePayload = jwt_decode(response.credential);
-          
-               console.log("ID: " + responsePayload.sub);
-               console.log('Full Name: ' + responsePayload.name);
-               console.log('Given Name: ' + responsePayload.given_name);
-               console.log('Family Name: ' + responsePayload.family_name);
-               console.log("Image URL: " + responsePayload.picture);
-               console.log("Email: " + responsePayload.email);
-            }
-            console.log(jwt_decode("eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk5YmNiMDY5MzQwYTNmMTQ3NDYyNzk0ZGZlZmE3NWU3OTk2MTM2MzQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2ODgxMjg3OTgsImF1ZCI6IjE1MTA1MzA1ODM3NC1oYTNqYjk4NGg2dWVtNTM3MTZybzM4bGY0anNpcGw5Ni5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMjg4NDk4Mjg5ODAxNDcxNjIyMiIsImVtYWlsIjoic2Fydmluci4xMUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXpwIjoiMTUxMDUzMDU4Mzc0LWhhM2piOTg0aDZ1ZW01MzcxNnJvMzhsZjRqc2lwbDk2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwibmFtZSI6IlNhcnZpbiBSIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FBY0hUdGRZbWp3bU11T0FFUk1GbGFBc0VTaXNyQWZpRWo3VjljQUY4VHZ2Q3JnYkdBPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IlNhcnZpbiIsImZhbWlseV9uYW1lIjoiUiIsImlhdCI6MTY4ODEyOTA5OCwiZXhwIjoxNjg4MTMyNjk4LCJqdGkiOiJhZTk1OTJjYTQwOGI4NzM0ZDg5ZWM5YTRiM2NhNDZjZDA3NzcxNTk2In0.jhEOyZCCkdNMcQvS7YZ9c-ef2J7m71S2oebUrmgm2nM1tn4ncPB7skb6pQ-KlwQLF45JSZvqEkrKJWeuwnTBV7SC_2w_7g5ADGDJ1cGmS6RIOZG3ObW33VtRjf8y7sJ0lN_nTlQd6Uk-xXWV2fbVsOXYnkIOGNUemgQSTcYKulwVaSpFdLHaqEs0JDbBtV65PPy24Tzq1SqR85odlhDmaW2_vKD4x93ZEw8KaXOHBgKTYWwp7wUhs9MUcCPaeO--K1Zmz7Wo6Eb0UD1rk47__xBg3YL0J1if0suWNPSls0qOTL4ifPde0dD49X62s3SsaflNYXNHJp6rL4_8Pu9F2Q"))
-          </script>
+    <script async defer>
+        function handleCredentialResponse(response) {
+            console.log("JWT Data : " + response.credential)
+            const responsePayload = jwt_decode(response.credential);
+        
+            console.log("ID: " + responsePayload.sub);
+            console.log('Full Name: ' + responsePayload.name);
+            console.log('Given Name: ' + responsePayload.given_name);
+            console.log('Family Name: ' + responsePayload.family_name);
+            console.log("Image URL: " + responsePayload.picture);
+            console.log("Email: " + responsePayload.email);
+        }
+        console.log(jwt_decode("eyJhbGciOiJSUzI1NiIsImtpZCI6Ijk5YmNiMDY5MzQwYTNmMTQ3NDYyNzk0ZGZlZmE3NWU3OTk2MTM2MzQiLCJ0eXAiOiJKV1QifQ.eyJpc3MiOiJodHRwczovL2FjY291bnRzLmdvb2dsZS5jb20iLCJuYmYiOjE2ODgxMjg3OTgsImF1ZCI6IjE1MTA1MzA1ODM3NC1oYTNqYjk4NGg2dWVtNTM3MTZybzM4bGY0anNpcGw5Ni5hcHBzLmdvb2dsZXVzZXJjb250ZW50LmNvbSIsInN1YiI6IjExMjg4NDk4Mjg5ODAxNDcxNjIyMiIsImVtYWlsIjoic2Fydmluci4xMUBnbWFpbC5jb20iLCJlbWFpbF92ZXJpZmllZCI6dHJ1ZSwiYXpwIjoiMTUxMDUzMDU4Mzc0LWhhM2piOTg0aDZ1ZW01MzcxNnJvMzhsZjRqc2lwbDk2LmFwcHMuZ29vZ2xldXNlcmNvbnRlbnQuY29tIiwibmFtZSI6IlNhcnZpbiBSIiwicGljdHVyZSI6Imh0dHBzOi8vbGgzLmdvb2dsZXVzZXJjb250ZW50LmNvbS9hL0FBY0hUdGRZbWp3bU11T0FFUk1GbGFBc0VTaXNyQWZpRWo3VjljQUY4VHZ2Q3JnYkdBPXM5Ni1jIiwiZ2l2ZW5fbmFtZSI6IlNhcnZpbiIsImZhbWlseV9uYW1lIjoiUiIsImlhdCI6MTY4ODEyOTA5OCwiZXhwIjoxNjg4MTMyNjk4LCJqdGkiOiJhZTk1OTJjYTQwOGI4NzM0ZDg5ZWM5YTRiM2NhNDZjZDA3NzcxNTk2In0.jhEOyZCCkdNMcQvS7YZ9c-ef2J7m71S2oebUrmgm2nM1tn4ncPB7skb6pQ-KlwQLF45JSZvqEkrKJWeuwnTBV7SC_2w_7g5ADGDJ1cGmS6RIOZG3ObW33VtRjf8y7sJ0lN_nTlQd6Uk-xXWV2fbVsOXYnkIOGNUemgQSTcYKulwVaSpFdLHaqEs0JDbBtV65PPy24Tzq1SqR85odlhDmaW2_vKD4x93ZEw8KaXOHBgKTYWwp7wUhs9MUcCPaeO--K1Zmz7Wo6Eb0UD1rk47__xBg3YL0J1if0suWNPSls0qOTL4ifPde0dD49X62s3SsaflNYXNHJp6rL4_8Pu9F2Q"))
+    </script>
 </body>
 </html>
